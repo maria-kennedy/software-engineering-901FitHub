@@ -1,0 +1,19 @@
+<h1>Leave a Review for <%= @product.name %></h1>
+
+<%= bootstrap_form_with model: @purchased_product, url: purchased_product_path(@product), method: :post, data: { turbo: false } do |f| %>
+  <div>
+    <%= f.text_field :review_title, label: "Title" %>
+  </div>
+  <div>
+    <%= f.number_field :review_rating, label: "Rating (1-5)", in: 1..5 %>
+  </div>
+  <div>
+    <%= f.check_box :review_recommendation, label: "Would you recommend this product?" %>
+  </div>
+  <div>
+    <%= f.text_area :review_description, label: "Description (Optional)" %>
+  </div>
+  <div>
+    <%= f.submit "Submit Review" %>
+  </div>
+<% end %>

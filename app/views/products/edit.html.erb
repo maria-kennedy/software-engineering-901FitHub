@@ -1,0 +1,65 @@
+<h1>Edit Product</h1> 
+
+<%= bootstrap_form_with model: @product, url: product_path(@product), method: :patch, data: { turbo: false } do |f| %>
+
+  <!-- Product Name -->
+  <div class="mb-3">
+    <%= f.text_field :name, label: "Product Name", class: "form-control" %>
+  </div>
+
+  <!-- Description -->
+  <div class="mb-3">
+    <%= f.text_area :description, label: "Description", class: "form-control", rows: 5 %>
+  </div>
+
+  <!-- Price -->
+  <div class="mb-3">
+    <%= f.number_field :price, step: 0.01, label: "Price ($)", class: "form-control" %>
+  </div>
+
+  <% if @product.is_a?(WorkoutPlan) %>
+    <!-- Experience Level -->
+    <div class="mb-3">
+      <%= f.select :experience_level, 
+        options_for_select([["Beginner", "Beginner"], ["Intermediate", "Intermediate"], ["Advanced", "Advanced"]], @product.experience_level),
+        label: "Experience Level", class: "form-control" %>
+    </div>
+
+    <!-- Muscle Group -->
+    <div class="mb-3">
+      <%= f.select :muscle_group, 
+        options_for_select([["Upper Body", "Upper Body"], ["Lower Body", "Lower Body"], ["Full Body", "Full Body"]], @product.muscle_group),
+        label: "Muscle Group", class: "form-control" %>
+    </div>
+  <% elsif @product.is_a?(MealPlan) %>
+    <!-- Diet Type -->
+    <div class="mb-3">
+      <%= f.select :diet_type, 
+        options_for_select([["Vegan", "Vegan"], ["Vegetarian", "Vegetarian"], ["Keto", "Keto"], ["Paleo", "Paleo"]], @product.diet_type),
+        label: "Diet Type", class: "form-control" %>
+    </div>
+
+    <!-- Dietary Restrictions -->
+    <div class="mb-3">
+      <%= f.select :dietary_restrictions, 
+        options_for_select([["Gluten-Free", "Gluten-Free"], ["Nut-Free", "Nut-Free"], ["Dairy-Free", "Dairy-Free"], ["None", "None"]], @product.dietary_restrictions),
+        label: "Dietary Restrictions", class: "form-control" %>
+    </div>
+  <% end %>
+
+  <!-- File Upload -->
+  <div class="mb-3">
+    <%= f.file_field :file, label: "File Upload", class: "form-control" %>
+    <% if @product.file.attached? %>
+      <p>Current File: <%= link_to @product.file.filename, rails_blob_path(@product.file, disposition: "attachment") %></p>
+    <% end %>
+  </div>
+
+  <!-- Submit Button -->
+  <div>
+    <%= f.submit "Save Changes", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
+
+<%= link_to "Back to Products", products_path, class: "btn btn-secondary mt-3" %>

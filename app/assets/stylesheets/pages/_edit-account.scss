@@ -1,0 +1,85 @@
+.edit-account-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .edit-account-container h2 {
+    font-size: 2.5rem;
+    color: #13263b;
+    margin-bottom: 20px;
+  }
+  .edit-account-container .field {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .edit-account-container .field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  .edit-account-container .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+  .edit-account-container .form-control:focus {
+    border-color: #fdb927;
+    box-shadow: 0 0 5px rgba(253, 185, 39, 0.5);
+    outline: none;
+  }
+  .edit-account-container .actions .btn-primary {
+    background-color: #fdb927;
+    color: #13263b;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .edit-account-container .actions .btn-primary:hover {
+    background-color: #23375b;
+    color: #ffffff;
+  }
+  .pending-confirmation {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    font-style: italic;
+  }
+  .cancel-account {
+    margin-top: 30px;
+  }
+  .cancel-account h3 {
+    font-size: 1.5rem;
+    color: #ff4c4c;
+    margin-bottom: 10px;
+  }
+  .cancel-account .btn-danger {
+    background-color: #ff4c4c;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+  }
+  .cancel-account .btn-danger:hover {
+    background-color: #cc0000;
+  }
+  .back-link .btn-secondary {
+    margin-top: 15px;
+    background-color: #cccccc;
+    color: #4a4a4a;
+    border: none;
+  }
+  .back-link .btn-secondary:hover {
+    background-color: #999999;
+    color: #ffffff;
+  }

@@ -1,0 +1,22 @@
+<div class="past-orders-container">
+  <h1>Completed Orders</h1>
+  
+  <table class="orders-table">
+    <thead>
+      <tr>
+        <th>Link</th>
+        <th>Confirmation Number</th>
+        <th>Placed On</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= link_to 'View Order', confirmation_path(confirmation_num: order.confirmation_number), class: 'view-order-link' %></td>
+          <td><%= order.confirmation_number %></td>
+          <td><%= order.date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

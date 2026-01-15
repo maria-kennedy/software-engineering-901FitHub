@@ -1,0 +1,74 @@
+/* stylesheets/components/_forms.scss */
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+  
+  .form-control:focus {
+    border-color: #fdb927;
+    box-shadow: 0 0 5px rgba(253, 185, 39, 0.5);
+    outline: none;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  
+  .field {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .error-messages {
+    color: #ff4c4c;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #fdb927;
+  }
+  
+  input[type="checkbox"]:focus,
+  input[type="radio"]:focus {
+    outline: 2px solid #fdb927;
+    outline-offset: 2px;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .remember-me label {
+    margin-left: 5px;
+    color: #4a4a4a;
+  }
+  
+  .form-button {
+    background-color: #fdb927;
+    color: #13263b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #23375b;
+    color: #ffffff;
+  }

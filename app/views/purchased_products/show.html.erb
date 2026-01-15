@@ -1,0 +1,29 @@
+<h1>Reviews for <strong><%= @product.name %></strong></h1>
+
+<p><strong>Average Rating:</strong> 
+  <% if @average_rating.present? %>
+    <%= @average_rating %> / 5
+  <% else %>
+    No ratings yet.
+  <% end %>
+</p>
+
+<% if @reviews.any? %>
+    <% @reviews.each do |review| %>
+        <div class="review-card" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+        <p><strong>User:</strong> <%= review.user.username %></p>
+        <p><strong>Title:</strong> <%= review.review_title %></p>
+        <p><strong>Rating:</strong> <%= review.review_rating %> / 5</p>
+        <p><strong>Recommendation:</strong> <%= review.review_recommendation ? 'Yes' : 'No' %></p>
+        <p><strong>Description</strong></p>
+        <div style="border: 1px solid #ddd; white-space: pre-wrap;">
+        <%= review.review_description %>
+        </div>
+        <p><strong>Reviewed On:</strong> <%= review.created_at.strftime("%B %d, %Y") %></p>
+        </div>
+    <% end %>
+<% else %>
+    <p>No reviews available for this product yet.</p>
+<% end %>
+
+<%= link_to 'Back to Products', products_path, class: 'btn btn-secondary' %>

@@ -1,0 +1,50 @@
+<div class="product-show-container">
+  <div class="product-details">
+    <div class="product-image">
+      <%= image_tag @product.picture.variant(resize_to_limit: [450, 450]) if @product.picture.attached? %>
+    </div>
+
+    <div class="product-info">
+      <h1><%= @product.name %></h1>
+      <p><%= @product.description %></p>
+      <p class="price"><%= number_to_currency(@product.price) %></p>
+
+      <h4>Category:</h4>
+      <% if @product.diet_type.present? %>
+        <p>- <%= @product.diet_type %></p>
+      <% end %>
+      <% if @product.dietary_restrictions.present? %>
+        <p>- <%= @product.dietary_restrictions %></p>
+      <% end %>
+      <% if @product.experience_level.present? %>
+        <p>- <%= @product.experience_level %></p>
+      <% end %>
+      <% if @product.muscle_group.present? %>
+        <p>- <%= @product.muscle_group %></p>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <% order = current_user.orders.find_by(status: :cart) %>
+        <% if order %>
+          <%= button_to 'Add to Cart', add_to_cart_path(product_id: @product.id), method: :post, class: 'btn btn-primary' %>
+        <% end %>
+      <% else %>
+        <%= link_to 'Add to Cart', new_user_session_path, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="reviews-section">
+    <h3>Reviews:</h3>
+    <p style="margin-top: 20px;">
+      <%= link_to "Leave A Review", leave_review_path(@product), class: "btn btn-primary" %>
+    </p>
+    <p>
+      <%= link_to "View all the Reviews", purchased_product_path(@product), class: "btn btn-primary" %>
+    </p>
+  </div>
+
+  <p>
+    <%= link_to 'Back to Products', products_path, class: 'btn btn-primary' %>
+  </p>
+</div>

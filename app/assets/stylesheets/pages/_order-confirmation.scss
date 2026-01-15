@@ -1,0 +1,61 @@
+.order-confirmation-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .order-confirmation-container h1 {
+    font-size: 2.5rem;
+    color: #13263b;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .order-details p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #4a4a4a;
+  }
+  .confirmation-number {
+    font-weight: bold;
+    color: #23375b;
+  }
+  .order-date {
+    font-style: italic;
+  }
+  .order-items {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  .order-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .order-items li span {
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+  .download-link {
+    font-size: 0.9rem;
+    color: #fdb927;
+  }
+  .download-link:hover {
+    text-decoration: underline;
+    color: #23375b;
+  }
+  .total-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #13263b;
+  }
+  .error-message {
+    color: #ff4c4c;
+    font-size: 1.2rem;
+    text-align: center;
+  }

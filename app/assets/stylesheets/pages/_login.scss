@@ -1,0 +1,71 @@
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .login-container h2 {
+    font-size: 2rem;
+    color: #13263b;
+    margin-bottom: 20px;
+  }
+  .login-container .field {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  .login-container .field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  .login-container .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+  .login-container .form-control:focus {
+    border-color: #fdb927;
+    box-shadow: 0 0 5px rgba(253, 185, 39, 0.5);
+    outline: none;
+  }
+  .login-container .remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .login-container .remember-me label {
+    margin-left: 5px;
+    color: #4a4a4a;
+  }
+  .login-container .btn-primary {
+    background-color: #fdb927;
+    color: #13263b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+  }
+  .login-container .btn-primary:hover {
+    background-color: #23375b;
+    color: #ffffff;
+  }
+  .login-container .links {
+    margin-top: 15px;
+  }
+  .login-container .links a {
+    color: #13263b;
+    text-decoration: underline;
+  }
+  .login-container .links a:hover {
+    color: #fdb927;
+    text-decoration: none;
+  }

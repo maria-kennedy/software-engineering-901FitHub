@@ -1,0 +1,39 @@
+/* stylesheets/components/_buttons.scss */
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #fdb927;
+    color: #13263b;
+  }
+  
+  .btn-primary:hover {
+    background-color: #23375b;
+    color: #ffffff;
+  }
+  
+  .btn-secondary {
+    background-color: #cccccc;
+    color: #4a4a4a;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #999999;
+    color: #ffffff;
+  }
+  
+  .btn-danger {
+    background-color: #ff4c4c;
+    color: #ffffff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #cc0000;
+  }

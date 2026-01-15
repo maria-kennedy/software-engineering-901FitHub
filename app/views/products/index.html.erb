@@ -1,0 +1,88 @@
+<h1>Products</h1>
+
+
+<div class="filters-and-products">
+
+  <aside class="filters-container">
+    <%= search_form_for @q, url: products_path, method: :get, local: true do |f| %>
+      <div>
+        <%= f.label :name_or_description_cont, "Search Products:" %>
+        <%= f.text_field :name_or_description_cont, placeholder: "Enter product name or description", class: "form-control" %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      </div>
+      
+      <div>
+        <%= f.label :type_eq, "Filter by Product Type:"%> <br>
+        <%= f.select :type_eq,  [ ["Workout Plans", "WorkoutPlan"], ["Meal Plans", "MealPlan"]  ], 
+        {include_blank: "Select a Product Type"}, {id: "product-type-select", class: "form-control"} %>
+      </div>
+
+      <div id="workout-filters">
+        <h4>Workout Plan Filters</h4>
+        <div>
+          <%= f.label :experience_level_in, "Experience Level:"%><br>
+          <%= f.check_box :experience_level_in, {}, "Beginner", nil %> Beginner<br>
+          <%= f.check_box :experience_level_in, {}, "Intermediate", nil %> Intermediate<br>
+          <%= f.check_box :experience_level_in, {}, "Advanced", nil %> Advanced<br>
+        </div>
+
+        <div>
+          <%= f.label :muscle_group_in, "Muscle Group"%><br>
+          <%= f.check_box :muscle_group_in, {}, "Full Body", nil %> Full Body<br>
+          <%= f.check_box :muscle_group_in, {}, "Upper Body", nil %> Upper Body<br>
+          <%= f.check_box :muscle_group_in, {}, "Lower Body", nil %> Lower Body<br>
+        </div>
+      </div>
+
+      <div id="meal-filters">
+        <h4>Meal Plan Filters</h4>
+          <div>
+            <%= f.label :diet_type_eq, "Diet Type:" %><br>
+            <%= f.select :diet_type_eq, ["Vegan", "Keto", "Kosher"],
+              { include_blank: "Select Diet Type" }, { class: "form-control" } %>
+          </div>
+          <div>
+            <%= f.label :dietary_restrictions_eq, "Dietary Restrictions:" %><br>
+            <%= f.select :dietary_restrictions_eq, ["Gluten Free", "Dairy Free", "Nut Free"],
+              { include_blank: "Select Dietary Restriction" }, { class: "form-control" } %>
+          </div>
+      </div>
+
+      <div>
+        <%= f.submit "Apply Filters", class: "btn btn-primary" %>
+        <%= link_to "Clear Filters", products_path, class: "btn btn-secondary" %>
+      </div>
+      
+    <% end %>
+  </aside>
+  
+  <main class="products-container">
+    <% if @products.any?%>
+      <% @products.each do |product| %>
+        <div class="product-item">
+          <p><%= image_tag product.picture.variant(resize_to_limit: [300, 300]) if product.picture.attached? %></p>
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+          <p><%= number_to_currency(product.price) %></p>
+
+          <p><%= link_to 'View Product', product_path(product), class: 'btn btn-primary' %></p>
+          <% if current_user&.admin? %>
+            <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-primary' %>
+          <% end %>
+            <%if user_signed_in? %>
+              <% order = current_user.orders.find_by(status: :cart) %>
+              <%if order%>
+                <%= button_to 'Add to Cart', add_to_cart_path(product_id: product.id), method: :post, class: 'btn btn-primary' %>
+              <%end%>
+            <%else%>
+              <p><%= link_to 'Add to Cart',new_user_session_path, class: 'btn btn-primary'%>
+            <%end%>
+        </div>
+
+      <%end%>
+    <% else %>
+      <p>No products found matching your search criteria.</p>
+    <%end%>
+  </main>
+
+</div>

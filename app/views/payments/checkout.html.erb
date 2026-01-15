@@ -1,0 +1,11 @@
+<h1>Enter Payment Information</h1>
+
+<%= bootstrap_form_with model: @payment, url: complete_order_path, method: :patch, local: true, data: { turbo: false } do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_field :card_number %>
+    <%= f.select :expiration_month, [["January", 1], ["February", 2], ["March", 3], ["April", 4], ["May", 5], ["June", 6], ["July", 7], ["August", 8], ["September", 9], ["October", 10], ["November", 11], ["December", 12]]%>
+    <%= f.select :expiration_year, (2024..2033).to_a%>
+    <%= f.text_field :security_code %>
+    <%= f.submit "Complete Order", class: 'btn btn-primary' %>
+
+<% end %>

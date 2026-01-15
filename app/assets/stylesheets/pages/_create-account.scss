@@ -1,0 +1,68 @@
+.new-account-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .new-account-container h2 {
+    font-size: 2.5rem;
+    color: #13263b;
+    margin-bottom: 20px;
+  }
+  .new-account-container .field {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .new-account-container .field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  .new-account-container .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+  .new-account-container .form-control:focus {
+    border-color: #fdb927;
+    box-shadow: 0 0 5px rgba(253, 185, 39, 0.5);
+    outline: none;
+  }
+  .new-account-container .error-messages {
+    color: #ff4c4c;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-align: left;
+  }
+  .new-account-container .btn-primary {
+    background-color: #fdb927;
+    color: #13263b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+  }
+  .new-account-container .btn-primary:hover {
+    background-color: #23375b;
+    color: #ffffff;
+  }
+  .new-account-container .links {
+    margin-top: 15px;
+  }
+  .new-account-container .links a {
+    color: #13263b;
+    text-decoration: underline;
+  }
+  .new-account-container .links a:hover {
+    color: #fdb927;
+    text-decoration: none;
+  }

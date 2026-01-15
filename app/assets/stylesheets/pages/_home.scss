@@ -1,0 +1,40 @@
+.home-page {
+    background: linear-gradient(to bottom, #cdd7de 0%, #7892ae 70%, #23375b 100%);
+    color: #262626; 
+    padding: 20px;
+    font-family: 'Oswald', sans-serif;
+    min-height: 100vh; 
+  }
+  
+  .welcome-heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700; 
+    color: #fdb927; 
+    margin-bottom: 20px;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .home-logo {
+    width: 350px;
+    height: auto;
+  }
+  
+  .about-heading {
+    font-size: 2rem;
+    margin-top: 30px;
+    color: #fdb927; 
+    text-align: left;
+  }
+  
+  .about-text {
+    font-size: 1.2rem;
+    line-height: 1.6; 
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  

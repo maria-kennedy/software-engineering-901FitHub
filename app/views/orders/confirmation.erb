@@ -1,0 +1,25 @@
+<div class="order-confirmation-container">
+  <h1>Order Confirmation</h1>
+
+  <% if @order %>
+    <div class="order-details">
+      <p class="confirmation-number">Confirmation Number: <%= @order.confirmation_number %></p>
+      <p class="order-date">Placed on: <%= @order.created_at.strftime("%B %d, %Y") %></p>
+
+      <h2>Items in Your Order:</h2>
+      <ul class="order-items">
+        <% @order.order_items.each do |item| %>
+          <li>
+            <span><%= item.product_name %></span> 
+            <span><%= number_to_currency(item.product_price) %></span>
+            <%= link_to "Download File", rails_blob_path(item.product.file, disposition: "attachment"), class: 'btn btn-link download-link' %>
+          </li>
+        <% end %>
+      </ul>
+
+      <p class="total-price">Total Price: <%= number_to_currency(@total_price) %></p>
+    </div>
+  <% else %>
+    <p class="error-message">Sorry, we could not find an order with the provided confirmation number.</p>
+  <% end %>
+</div>

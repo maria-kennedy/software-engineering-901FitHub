@@ -1,0 +1,32 @@
+<div class="shopping-cart-container">
+  <h1>Shopping Cart</h1>
+
+  <p> Date: <%= @order.date&.strftime("%B %d, %Y") || "Date not set" %> </p>
+
+  <h2>Products in this Order</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.order_items.each do |order_item| %>
+        <tr>
+          <td><%= order_item.product_name %></td>
+          <td><%= number_to_currency(order_item.product_price) %></td> 
+          <td><%= button_to "Delete", order_item_path(order_item), method: :delete, class: 'btn btn-primary' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="summary-section">
+    <h3>Summary</h3>
+    <p>Total: <%= number_to_currency(@total_price) %></p>
+    <p><%= link_to 'Check Out', checkout_path, class: 'btn btn-primary' %></p>
+    <p><%= link_to 'Back to Products', products_path, class: 'btn btn-primary' %></p>
+  </div>
+</div>

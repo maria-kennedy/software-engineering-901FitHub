@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+/*
+* COLOR PALETTE
+* Navy: 222c63
+* Darkest Blue: 111b2b, 13263b
+* Medium Blue: 7892ae
+* Lightest Blue: cdd7de
+* Golden: fdb927
+* Dark Blueish Gray: 464957
+*/
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "yeti/variables";
+@import "bootstrap";
+@import "yeti/bootswatch";
+@import "rails_bootstrap_forms";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+@import "components/buttons";
+@import "components/forms";
+@import "components/containers";
+
+@import "pages/home";
+@import "pages/products";
+@import "pages/product-show";
+@import "pages/shopping-cart";
+@import "pages/order-confirmation";
+@import "pages/past-orders";
+@import "pages/user-account";
+@import "pages/login";
+@import "pages/create-account";
+@import "pages/edit-account";
+
+label.required:after {
+  content:" *";
+}
+
+main {
+  margin-top: 20px;
+}
+
+.alert-dismissible {
+  padding-left: $alert-dismissible-padding-r;
+}
+
+.custom-navbar {
+  background-color: #13263b; 
+  font-family: 'Oswald', sans-serif; 
+  font-size: 16px; 
+  color: #fdb927; 
+}
+
+.navbar-brand img {
+  height: 50px;
+  width: auto;  
+}
+
+.navbar-nav .nav-item {
+  margin-right: 10px;
+}
+.navbar-nav .nav-link {
+  color: #fdb927; 
+  font-weight: 400; 
+  text-transform: uppercase; 
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f0f0f0; 
+  text-decoration: none; 
+}
+
+.filters-and-products{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+}
+
+.filters-container{
+  background-color: #999999;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.products-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.product-item{
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  
+}

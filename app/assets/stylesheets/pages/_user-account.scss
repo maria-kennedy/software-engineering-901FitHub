@@ -1,0 +1,49 @@
+.user-account-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .user-account-container h1 {
+    font-size: 2.5rem;
+    color: #13263b;
+    margin-bottom: 20px;
+  }
+  .user-info p {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+  }
+  .user-info strong {
+    color: #13263b;
+  }
+  .user-actions {
+    margin-top: 20px;
+  }
+  .user-actions .btn {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .user-actions .btn-primary {
+    background-color: #fdb927;
+    color: #13263b;
+    border: none;
+  }
+  .user-actions .btn-primary:hover {
+    background-color: #23375b;
+    color: #ffffff;
+  }
+  .user-actions .btn-secondary {
+    background-color: #cccccc;
+    color: #4a4a4a;
+    border: none;
+  }
+  .user-actions .btn-secondary:hover {
+    background-color: #999999;
+    color: #ffffff;
+  }
