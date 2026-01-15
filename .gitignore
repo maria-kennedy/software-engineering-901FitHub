@@ -31,3 +31,4 @@
 /config/master.key
 !/tmp/capybara/*
 !/tmp/capybara/.keep
+.DS_Store
