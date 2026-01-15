@@ -32,3 +32,12 @@
 !/tmp/capybara/*
 !/tmp/capybara/.keep
 .DS_Store
+
+# Environment variables
+.env
+.env.*
+credentials*.yml
+
+# Editors / IDEs
+.idea/
+.vscode/
