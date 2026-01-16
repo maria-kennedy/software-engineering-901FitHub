@@ -1,5 +1,8 @@
 # 901FitHub (Portfolio Copy)
 
+## Live Demo
+🔗 https://software-engineering-901fithub.onrender.com
+
 ⚠️ **Attribution Notice**  
 This repository is a portfolio copy of a team-based academic project.  
 The original repository is owned by a University of Memphis organization and can be found here:  
@@ -32,6 +35,26 @@ This copy is shared for portfolio and demonstration purposes.
 - PostgreSQL
 - HTML / CSS
 - JavaScript
+
+---
+
+## How to Try the App
+This application is deployed as a live demo for portfolio and demonstration purposes.
+
+You can:
+- Browse workout and meal plans
+- Create an account using a fake email address
+- Complete a checkout flow using dummy credit card information
+- Download real PDF workout and meal plans after checkout
+
+**No real payments are processed.**
+
+---
+
+## Demo Checkout Notes
+- You may use any valid email format (e.g. test@example.com)
+- Payment information can be fake / test data
+- The checkout flow exists to demonstrate user experience and application logic
 
 ---
 
